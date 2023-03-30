@@ -15,7 +15,7 @@ const appRoutes: Routes = [
     { path: 'login', component: LoginComponent},
     { path: 'registro', component: RegisterComponent},
     { path: 'ajustes', component: UserEditComponent},
-    { path: '**', component: LoginComponent}
+    { path: '**', component: LoginComponent},
 ]
 
 // Export configuraciones

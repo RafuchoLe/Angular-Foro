@@ -22,7 +22,6 @@
     "jquery": "^3.6.3",
     "ngx-highlight-js": "^15.0.0",
     "ngx-moment": "^6.0.2",
-    "ngx-uploader": "^11.0.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"
