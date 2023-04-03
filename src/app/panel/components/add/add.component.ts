@@ -17,6 +17,7 @@ export class AddComponent {
   public identity;
   public token;
   public status;
+  public is_edit = false;
 
   constructor(
     private _route: ActivatedRoute,
