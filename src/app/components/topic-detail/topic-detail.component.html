@@ -1,0 +1,25 @@
+<div class="col-lg-12 topic-box mt-3" *ngIf="topic">
+    <div class="topic-data col-lg-9 float left">
+        <p>{{topic.title}}</p>
+        <span class="badge badge-warning mr-2" *ngIf="topic.lang">
+            {{topic.lang}}
+        </span>
+        <span class="badge badge-primary">
+            {{topic.user.name+' '+topic.user.surname}}
+        </span>
+        <span class="badge badge-light ml-2">
+            {{topic.date | amLocale: 'es' | amTimeAgo}}
+        </span>
+        <article id="topic-content" class="mt-2">
+            {{topic.content}}
+        </article>
+
+        <p class="mt-3" *ngIf="topic.code && topic.lang">
+            <textarea highlight-js [lang]="'{{topic.lang}}'">
+                {{topic.code}}
+            </textarea>
+
+        </p>
+    </div>
+
+</div>

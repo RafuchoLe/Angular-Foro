@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { routing, appRoutingProviders } from './app.routing';
 import { MomentModule } from 'ngx-moment';
+import { HighlightJsModule } from 'ngx-highlight-js';
 
 import { PanelModule } from './panel/panel.module';
 
@@ -14,6 +15,7 @@ import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 import { UserEditComponent } from './components/user-edit/user-edit.component';
 import { TopicsComponent } from './components/topics/topics.component';
+import { TopicDetailComponent } from './components/topic-detail/topic-detail.component';
 
 
 @NgModule({
@@ -23,7 +25,8 @@ import { TopicsComponent } from './components/topics/topics.component';
     LoginComponent,
     HomeComponent,
     UserEditComponent,
-    TopicsComponent
+    TopicsComponent,
+    TopicDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +34,8 @@ import { TopicsComponent } from './components/topics/topics.component';
     HttpClientModule,
     routing,
     PanelModule,
-    MomentModule
+    MomentModule,
+    HighlightJsModule,
   ],
   providers: [
     appRoutingProviders
