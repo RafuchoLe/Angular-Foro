@@ -29,7 +29,7 @@ export class TopicsComponent implements OnInit{
   ngOnInit(): void {
     this._route.params.subscribe(params =>{
       let page = +params['page'];
-      if (!page || page == null || page == undefined) {
+      if (!page) {
         page = 1;
         this.prev_page = 1;
         this.next_page = 2;
@@ -39,8 +39,8 @@ export class TopicsComponent implements OnInit{
   }
 
   getTopics(page =1){
-    this._topicService.getTopics(page).subscribe(
-      Response => {
+    this._topicService.getTopics(page).subscribe({
+      next: Response => {
         if (Response.topics) {
           this.topics = Response.topics;
 
@@ -72,10 +72,10 @@ export class TopicsComponent implements OnInit{
 
         }
       },
-      Error => {
+      error: Error => {
         console.log(Error);
         
       }
-    )
+    })
   }
 }

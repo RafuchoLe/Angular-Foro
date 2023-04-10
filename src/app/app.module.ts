@@ -4,7 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { routing, appRoutingProviders } from './app.routing';
 import { MomentModule } from 'ngx-moment';
-import { HighlightJsModule } from 'ngx-highlight-js';
+import { HighlightModule, HIGHLIGHT_OPTIONS } from 'ngx-highlightjs';
+
 
 import { PanelModule } from './panel/panel.module';
 
@@ -35,10 +36,16 @@ import { TopicDetailComponent } from './components/topic-detail/topic-detail.com
     routing,
     PanelModule,
     MomentModule,
-    HighlightJsModule,
+    HighlightModule,
   ],
   providers: [
-    appRoutingProviders
+    appRoutingProviders,
+    {
+      provide: HIGHLIGHT_OPTIONS,
+      useValue: {
+        fullLibraryLoader: () => import('highlight.js'),
+      }
+    },
   ],
   bootstrap: [AppComponent]
 })

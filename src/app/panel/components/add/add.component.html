@@ -28,7 +28,7 @@
             </small>
         </div>
         <div class="form-group">
-            <label for="content">Contenido</label>
+            <label for="content">Pon tu pregunta o Contenido</label>
             <textarea name="content" #content="ngModel" [(ngModel)]="topic.content" required class="form-control" ></textarea>
             <small *ngIf="!content.valid && content.touched" class="invalid-feedback d-block">
                 El contenido no es valido
