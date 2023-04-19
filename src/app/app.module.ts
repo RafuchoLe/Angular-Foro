@@ -8,6 +8,9 @@ import { HighlightModule, HIGHLIGHT_OPTIONS } from 'ngx-highlightjs';
 
 
 import { PanelModule } from './panel/panel.module';
+import { UserService } from "./services/user.service";
+import { UserGuard } from "./services/user.guard";
+import { NoIdentityGuard } from './services/no.identity.guard';
 
 
 import { AppComponent } from './app.component';
@@ -17,6 +20,9 @@ import { HomeComponent } from './components/home/home.component';
 import { UserEditComponent } from './components/user-edit/user-edit.component';
 import { TopicsComponent } from './components/topics/topics.component';
 import { TopicDetailComponent } from './components/topic-detail/topic-detail.component';
+
+
+
 
 
 @NgModule({
@@ -39,6 +45,9 @@ import { TopicDetailComponent } from './components/topic-detail/topic-detail.com
     HighlightModule,
   ],
   providers: [
+    UserGuard,
+    UserService,
+    NoIdentityGuard,
     appRoutingProviders,
     {
       provide: HIGHLIGHT_OPTIONS,
