@@ -75,4 +75,12 @@ export class UserService{
         
         return this._http.post('http://localhost:3999/api/upload-avatar',body, {headers:headers}); //POST
     }
+
+    getUsers():Observable<any>{
+        return this._http.get(this.url+'users');
+    }
+    
+    getUser(userId):Observable<any>{
+        return this._http.get(this.url+'user/'+userId);
+    }
 }
