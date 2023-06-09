@@ -18,12 +18,15 @@ export class TopicsComponent implements OnInit{
   public next_page;
   public prev_page;
   public number_pages;
+  public noPaginate:boolean;
   constructor(
     private _route: ActivatedRoute,
     private _router: Router,
-    private _topicService: TopicService
+    private _topicService: TopicService,
+    
   ){
-    this.page_title = 'Temas'
+    this.page_title = 'Temas';
+    this.noPaginate= false;
   }
 
   ngOnInit(): void {

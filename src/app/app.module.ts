@@ -21,6 +21,8 @@ import { UserEditComponent } from './components/user-edit/user-edit.component';
 import { TopicsComponent } from './components/topics/topics.component';
 import { TopicDetailComponent } from './components/topic-detail/topic-detail.component';
 import { UsersComponent } from './components/users/users.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { SearchComponent } from './components/search/search.component';
 
 
 
@@ -35,7 +37,9 @@ import { UsersComponent } from './components/users/users.component';
     UserEditComponent,
     TopicsComponent,
     TopicDetailComponent,
-    UsersComponent
+    UsersComponent,
+    ProfileComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

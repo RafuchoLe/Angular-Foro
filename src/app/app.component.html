@@ -22,9 +22,9 @@
           <a class="nav-link" [routerLink]="['/usuarios']">Compañeros</a>
         </li>
         <li class="nav-item">
-          <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Busqueda" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+          <form class="form-inline my-2 my-lg-0" #searchForm="ngForm">
+            <input class="form-control mr-sm-2" type="search" placeholder="Busqueda" aria-label="Search" [(ngModel)]="search" [ngModelOptions]="{standalone: true}" >
+            <button type="submit" class="btn btn-outline-success my-2 my-sm-0" name="busqueda" (click)="goSearch()">Buscar</button>
           </form>
         </li>
       </ul>
@@ -40,8 +40,10 @@
 
         <li class="nav-item" *ngIf="identity">
           <div class="avatar_mask">
-            <img src="{{url + 'avatar/' + identity.image }}" class="avatar_nav" alt="">
+            <img src="{{url + 'avatar/' + identity.image }}" class="avatar_nav" alt="" *ngIf="identity.image">
+            <img src="/assets/img/default.png" alt="" *ngIf="!identity.image">
           </div>
+          
         </li>
 
         <li class="nav-item dropdown" *ngIf="identity">
@@ -51,7 +53,7 @@
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" [routerLink]="['/panel']">Panel de Usuario</a>
-            <a class="dropdown-item" href="#">Mi perfil</a>
+            <a class="dropdown-item" [routerLink]="['/perfil', identity._id]">Mi perfil</a>
             <a class="dropdown-item" [routerLink]="['/ajustes']">Ajustes</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item pointer" (click)="logOut()">Cerrar sesion</a>
